@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace表示命名空间 -->
+<mapper namespace="com.dao.UserDao">
+<!--根据客户编号获取客户信息 -->
+<insert id="reg" parameterType="User">
+    insert into user (email,username,password)values(#{email},#{username},#{password})
+</insert>
+
+<select id="login" parameterType="String" resultType="User">
+    select * from user where username=#{name} and password=#{pwd}
+</select>
+</mapper>
